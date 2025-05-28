@@ -9,9 +9,9 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Research', href: '#research' },
+    { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -19,17 +19,17 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-indigo-600">
-            Kavin Prakash M
+          <div className="text-xl md:text-2xl font-bold text-indigo-600">
+            KAVIN PRAKASH M
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium text-sm lg:text-base"
               >
                 {item.name}
               </a>
