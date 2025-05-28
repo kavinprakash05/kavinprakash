@@ -1,10 +1,7 @@
-
 import { Code, Settings, User, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const Services = () => {
-  return (
-    <section id="services" className="py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+  return <section id="services" className="py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
@@ -18,7 +15,7 @@ const Services = () => {
             What I Offer
           </div>
           <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed text-justify">
             Specialized in building modern, responsive, and user-friendly web solutions that drive results and enhance user experience
           </p>
         </div>
@@ -30,7 +27,7 @@ const Services = () => {
                 <Code className="text-white" size={40} />
               </div>
               <h3 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">Frontend Web Development</h3>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto text-justify">
                 Specializing in building modern, responsive, and user-friendly interfaces with 
                 integrated payment systems and real-time features that deliver exceptional user experiences.
               </p>
@@ -80,34 +77,42 @@ const Services = () => {
                     <span className="font-medium">Modern React.js applications</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{
+                    animationDelay: '0.5s'
+                  }}></div>
                     <span className="font-medium">Mobile-first responsive design</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{
+                    animationDelay: '1s'
+                  }}></div>
                     <span className="font-medium">Cross-browser compatibility</span>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{
+                    animationDelay: '1.5s'
+                  }}></div>
                     <span className="font-medium">Performance optimization</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{animationDelay: '2s'}}></div>
+                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{
+                    animationDelay: '2s'
+                  }}></div>
                     <span className="font-medium">SEO-friendly structure</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{animationDelay: '2.5s'}}></div>
+                    <div className="w-3 h-3 bg-orange-400 rounded-full mr-4 animate-pulse" style={{
+                    animationDelay: '2.5s'
+                  }}></div>
                     <span className="font-medium">Clean, maintainable code</span>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8 text-center">
-                <Button 
-                  className="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
-                >
+                <Button className="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group">
                   Get Started Today
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
@@ -116,8 +121,6 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Services;

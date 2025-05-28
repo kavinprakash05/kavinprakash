@@ -78,7 +78,7 @@ const Hero = () => {
             <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">5+</div>
             <div className="text-gray-600 font-medium">Projects Completed</div>
           </div>
-          <div className="bg-white/70 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group border border-white/50">
+          <div className="bg-white/70 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group border border-white/50 my-[3px]">
             <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">2</div>
             <div className="text-gray-600 font-medium">Research Papers</div>
           </div>

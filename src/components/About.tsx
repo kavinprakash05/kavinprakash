@@ -1,9 +1,6 @@
-
 import { User, GraduationCap, Award } from 'lucide-react';
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 bg-white">
+  return <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
@@ -19,11 +16,11 @@ const About = () => {
                 <User className="text-indigo-600 mr-3" size={24} />
                 <h3 className="text-2xl font-bold text-gray-900">Personal Bio</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4 text-justify">
                 I am a dedicated frontend developer who thrives on building interactive, responsive web solutions. 
                 My passion lies in creating user-centric applications that provide seamless experiences across all devices.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-justify">
                 Beyond coding, I am actively involved in tech clubs and community initiatives, enjoying the opportunity 
                 to present innovative ideas at symposiums and collaborate with fellow tech enthusiasts.
               </p>
@@ -38,7 +35,7 @@ const About = () => {
                 <div className="bg-indigo-50 p-4 rounded-lg">
                   <h4 className="font-bold text-gray-900">Kongu Engineering College</h4>
                   <p className="text-indigo-600">B.Tech in Information Technology (2021–2025)</p>
-                  <p className="text-gray-600">CGPA: 6.95</p>
+                  <p className="text-gray-600">CGPA: 7.00</p>
                 </div>
                 <div className="bg-orange-50 p-4 rounded-lg">
                   <h4 className="font-bold text-gray-900">Saratha Matric Higher Secondary School</h4>
@@ -86,8 +83,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
