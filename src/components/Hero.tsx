@@ -1,25 +1,34 @@
 
-import { Download, Github, Linkedin } from 'lucide-react';
+import { Download, Github, Linkedin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-indigo-50 via-purple-50 to-orange-50 pt-20">
-      <div className="container mx-auto px-4">
+    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-20 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-orange-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-medium mb-4">
+            <div className="mb-8">
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-100 to-pink-100 border border-orange-200 rounded-full text-orange-700 text-sm font-medium mb-6 animate-fade-in">
+                <span className="w-2 h-2 bg-orange-500 rounded-full mr-2 animate-pulse"></span>
                 Welcome to my portfolio
-              </span>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 Hello, I'm{' '}
-                <span className="text-indigo-600">Kavin Prakash M</span>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                  Kavin Prakash M
+                </span>
               </h1>
-              <h2 className="text-xl md:text-2xl text-gray-600 mb-6">
+              <h2 className="text-xl md:text-2xl text-gray-600 mb-6 font-medium">
                 Frontend Developer | Tech Enthusiast | Student Leader
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
                 Passionate about building interactive, responsive web solutions and actively involved in tech communities. 
                 I thrive on creating user-centric applications and presenting innovative ideas at symposiums.
               </p>
@@ -27,41 +36,42 @@ const Hero = () => {
             
             <div className="flex flex-wrap gap-4 mb-8">
               <Button 
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full"
+                className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
               >
-                <Download className="mr-2 h-4 w-4" />
+                <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
                 Download CV
               </Button>
               <Button 
                 variant="outline"
-                className="border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-6 py-3 rounded-full"
+                className="border-2 border-indigo-300 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
               >
                 View Portfolio
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
 
             <div className="flex space-x-4">
               <a 
                 href="https://github.com/kavinprakash" 
-                className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-200 text-gray-700 hover:text-indigo-600"
+                className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-indigo-600 hover:scale-110 group"
               >
-                <Github size={20} />
+                <Github size={22} className="group-hover:rotate-12 transition-transform duration-300" />
               </a>
               <a 
                 href="https://linkedin.com/in/kavinprakash" 
-                className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-200 text-gray-700 hover:text-indigo-600"
+                className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-indigo-600 hover:scale-110 group"
               >
-                <Linkedin size={20} />
+                <Linkedin size={22} className="group-hover:rotate-12 transition-transform duration-300" />
               </a>
             </div>
           </div>
           
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative">
-              <div className="w-80 h-80 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-full opacity-20 absolute -top-4 -left-4"></div>
-              <div className="w-72 h-72 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-30 absolute top-4 left-4"></div>
-              <div className="relative w-80 h-80 bg-gray-200 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-6xl text-indigo-600 font-bold">
+              <div className="w-80 h-80 bg-gradient-to-br from-blue-400/40 to-purple-600/40 rounded-full opacity-60 absolute -top-4 -left-4 blur-xl animate-pulse"></div>
+              <div className="w-72 h-72 bg-gradient-to-br from-orange-400/40 to-pink-500/40 rounded-full opacity-70 absolute top-4 left-4 blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="relative w-80 h-80 bg-gradient-to-br from-white to-gray-100 rounded-full overflow-hidden border-8 border-white shadow-2xl hover:shadow-3xl transition-shadow duration-500">
+                <div className="w-full h-full bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                   KP
                 </div>
               </div>
@@ -69,18 +79,14 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-            <div className="text-3xl font-bold text-indigo-600 mb-2">6.95</div>
-            <div className="text-gray-600">CGPA</div>
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group border border-white/50">
+            <div className="text-4xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">5+</div>
+            <div className="text-gray-600 font-medium">Projects Completed</div>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-            <div className="text-3xl font-bold text-orange-500 mb-2">5+</div>
-            <div className="text-gray-600">Projects Completed</div>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">2</div>
-            <div className="text-gray-600">Research Papers</div>
+          <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group border border-white/50">
+            <div className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">2</div>
+            <div className="text-gray-600 font-medium">Research Papers</div>
           </div>
         </div>
       </div>
