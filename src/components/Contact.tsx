@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,32 +15,49 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    // Create mailto link with form data
-    const mailtoLink = `mailto:kavinprakash01@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success toast
-    toast({
-      title: "Email client opened!",
-      description: "Your default email client should open with the message pre-filled.",
-    });
+    try {
+      await emailjs.send(
+        'service_nyrfdef', // Service ID
+        'template_lspaqct', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Kavin Prakash',
+        },
+        'iDqdHF6XvfXAByLyd' // Public Key
+      );
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -126,6 +144,7 @@ const Contact = () => {
                     onChange={handleChange} 
                     required 
                     className="mt-1"
+                    disabled={isLoading}
                   />
                 </div>
                 <div>
@@ -138,6 +157,7 @@ const Contact = () => {
                     onChange={handleChange} 
                     required 
                     className="mt-1"
+                    disabled={isLoading}
                   />
                 </div>
               </div>
@@ -151,6 +171,7 @@ const Contact = () => {
                   onChange={handleChange} 
                   required 
                   className="mt-1"
+                  disabled={isLoading}
                 />
               </div>
               
@@ -164,14 +185,16 @@ const Contact = () => {
                   required 
                   rows={5} 
                   className="mt-1"
+                  disabled={isLoading}
                 />
               </div>
               
               <Button 
                 type="submit" 
                 className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3"
+                disabled={isLoading}
               >
-                Send Message
+                {isLoading ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </div>
