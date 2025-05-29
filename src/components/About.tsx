@@ -5,21 +5,21 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             A dedicated frontend developer who thrives on building interactive, responsive web solutions
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="mb-8">
-              <div className="flex items-center mb-4">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <div className="mb-10">
+              <div className="flex items-center mb-6">
                 <User className="text-indigo-600 mr-3" size={24} />
                 <h3 className="text-2xl font-bold text-gray-900">Personal Bio</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-4 text-justify">
+              <p className="text-gray-600 leading-relaxed mb-6 text-justify">
                 I am a dedicated frontend developer who thrives on building interactive, responsive web solutions. 
                 My passion lies in creating user-centric applications that provide seamless experiences across all devices.
               </p>
@@ -29,28 +29,28 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mb-8">
-              <div className="flex items-center mb-4">
+            <div className="mb-10">
+              <div className="flex items-center mb-6">
                 <Award className="text-indigo-600 mr-3" size={24} />
                 <h3 className="text-2xl font-bold text-gray-900">Leadership Roles</h3>
               </div>
               
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 rounded-xl text-white">
+                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 rounded-xl text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <h4 className="font-bold text-lg mb-2">Office Bearer</h4>
                   <p className="opacity-90">ISTE – KEC</p>
                 </div>
                 
-                <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-6 rounded-xl text-white">
+                <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-6 rounded-xl text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <h4 className="font-bold text-lg mb-2">Executive Member</h4>
                   <p className="opacity-90">Rotaract Club – KEC</p>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-gradient-to-r from-purple-500 to-indigo-500 p-4 rounded-xl text-white text-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-gradient-to-r from-purple-500 to-indigo-500 p-4 rounded-xl text-white text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <h4 className="font-bold">IV Coordinator</h4>
                   </div>
-                  <div className="bg-gradient-to-r from-pink-500 to-orange-500 p-4 rounded-xl text-white text-center">
+                  <div className="bg-gradient-to-r from-pink-500 to-orange-500 p-4 rounded-xl text-white text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <h4 className="font-bold">Project Coordinator</h4>
                   </div>
                 </div>
@@ -58,21 +58,33 @@ const About = () => {
             </div>
           </div>
 
-          <div>
-            <div className="flex items-center mb-6">
+          <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
+            <div className="flex items-center mb-8">
               <GraduationCap className="text-indigo-600 mr-3" size={24} />
               <h3 className="text-2xl font-bold text-gray-900">Education</h3>
             </div>
-            <div className="space-y-4">
-              <div className="bg-indigo-50 p-4 rounded-lg">
-                <h4 className="font-bold text-gray-900">Kongu Engineering College</h4>
-                <p className="text-indigo-600">B.Tech in Information Technology (2021–2025)</p>
-                <p className="text-gray-600">CGPA: 7.00</p>
+            <div className="space-y-6">
+              <div className="bg-gradient-to-r from-indigo-50 to-blue-50 p-8 rounded-2xl border border-indigo-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <h4 className="font-bold text-gray-900 text-xl mb-3">Kongu Engineering College</h4>
+                <p className="text-indigo-600 font-semibold text-lg mb-2">B.Tech in Information Technology</p>
+                <p className="text-gray-600 mb-2">2021 – 2025</p>
+                <div className="bg-white/80 px-4 py-2 rounded-lg inline-block">
+                  <p className="text-gray-700 font-medium">CGPA: 7.00</p>
+                </div>
               </div>
-              <div className="bg-orange-50 p-4 rounded-lg">
-                <h4 className="font-bold text-gray-900">Saratha Matric Higher Secondary School</h4>
-                <p className="text-orange-600">HSC – 85.67% (2021)</p>
-                <p className="text-gray-600">SSLC – 76.2% (2019)</p>
+              
+              <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-8 rounded-2xl border border-orange-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <h4 className="font-bold text-gray-900 text-xl mb-3">Saratha Matric Higher Secondary School</h4>
+                <div className="space-y-3">
+                  <div className="bg-white/80 px-4 py-3 rounded-lg">
+                    <p className="text-orange-600 font-semibold">HSC – 85.67%</p>
+                    <p className="text-gray-600 text-sm">2021</p>
+                  </div>
+                  <div className="bg-white/80 px-4 py-3 rounded-lg">
+                    <p className="text-orange-600 font-semibold">SSLC – 76.2%</p>
+                    <p className="text-gray-600 text-sm">2019</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

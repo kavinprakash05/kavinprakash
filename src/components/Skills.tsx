@@ -11,6 +11,10 @@ const Skills = () => {
     'ReactJS',
     'EmailJS',
     'OOPS',
+    'Git',
+    'MongoDB',
+    'Python',
+    'Machine Learning'
   ];
 
   const softSkills = [
@@ -19,18 +23,21 @@ const Skills = () => {
     { name: 'Time Management', icon: '⏰' },
     { name: 'Leadership', icon: '👑' },
     { name: 'Communication', icon: '💬' },
+    { name: 'Problem Solving', icon: '🧩' },
+    { name: 'Presentation', icon: '🎤' },
+    { name: 'Adaptability', icon: '🔄' }
   ];
 
   return (
     <section id="skills" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-orange-400/15 to-pink-400/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-orange-400/15 to-pink-400/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4 mr-2" />
             Skills & Expertise
@@ -43,7 +50,7 @@ const Skills = () => {
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Technical Skills */}
-          <div>
+          <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
             <div className="flex items-center mb-10">
               <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
                 <Code className="text-white" size={24} />
@@ -53,8 +60,8 @@ const Skills = () => {
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
               {technicalSkills.map((skill, index) => (
-                <div key={index} className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 group text-center">
-                  <span className="font-semibold text-gray-900 text-sm md:text-base">{skill}</span>
+                <div key={index} className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 group text-center hover:scale-105">
+                  <span className="font-semibold text-gray-900 text-sm md:text-base group-hover:text-indigo-600 transition-colors duration-300">{skill}</span>
                 </div>
               ))}
             </div>
@@ -86,7 +93,7 @@ const Skills = () => {
           </div>
 
           {/* Soft Skills */}
-          <div>
+          <div className="animate-fade-in" style={{animationDelay: '0.4s'}}>
             <div className="flex items-center mb-10">
               <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl flex items-center justify-center mr-4 shadow-lg">
                 <Briefcase className="text-white" size={24} />
@@ -94,16 +101,16 @@ const Skills = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Soft Skills</h3>
             </div>
             
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-2 gap-4">
               {softSkills.map((skill, index) => (
                 <div 
                   key={index} 
-                  className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group border border-white/50 hover:scale-105"
+                  className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group border border-white/50 hover:scale-105"
                 >
-                  <div className="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-2xl md:text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
                     {skill.icon}
                   </div>
-                  <h4 className="font-semibold text-gray-900 text-base md:text-lg">{skill.name}</h4>
+                  <h4 className="font-semibold text-gray-900 text-sm md:text-base group-hover:text-orange-600 transition-colors duration-300">{skill.name}</h4>
                 </div>
               ))}
             </div>
