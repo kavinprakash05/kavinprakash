@@ -6,7 +6,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,57 +14,32 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Initialize EmailJS
-  emailjs.init('UjBe8MhOIZUBgxfKf');
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:kavinprakash01@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success toast
+    toast({
+      title: "Email client opened!",
+      description: "Your default email client should open with the message pre-filled.",
+    });
 
-    try {
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: 'Kavin Prakash M',
-      };
-
-      await emailjs.send(
-        'service_kxtj4ap', // service ID
-        'template_k5drnhf', // template ID
-        templateParams
-      );
-
-      // Show success toast
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      
-      // Show error toast
-      toast({
-        title: "Failed to send message",
-        description: "Something went wrong. Please try again or contact me directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -152,7 +126,6 @@ const Contact = () => {
                     onChange={handleChange} 
                     required 
                     className="mt-1"
-                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -165,7 +138,6 @@ const Contact = () => {
                     onChange={handleChange} 
                     required 
                     className="mt-1"
-                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -179,7 +151,6 @@ const Contact = () => {
                   onChange={handleChange} 
                   required 
                   className="mt-1"
-                  disabled={isSubmitting}
                 />
               </div>
               
@@ -193,16 +164,14 @@ const Contact = () => {
                   required 
                   rows={5} 
                   className="mt-1"
-                  disabled={isSubmitting}
                 />
               </div>
               
               <Button 
                 type="submit" 
                 className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3"
-                disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                Send Message
               </Button>
             </form>
           </div>

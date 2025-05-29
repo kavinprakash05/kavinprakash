@@ -1,7 +1,10 @@
+
 import { Download, Github, Linkedin, ArrowRight, Phone, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 const Hero = () => {
-  return <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-20 relative overflow-hidden">
+  return (
+    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-20 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl"></div>
@@ -36,8 +39,12 @@ const Hero = () => {
                 <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
                 Download CV
               </Button>
-              <Button variant="outline" className="border-2 border-indigo-300 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group">
-                View Portfolio
+              <Button 
+                variant="outline" 
+                className="border-2 border-indigo-300 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
+                onClick={() => window.open('https://github.com/kavinprakash05', '_blank')}
+              >
+                Visit GitHub Profile
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
@@ -84,6 +91,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

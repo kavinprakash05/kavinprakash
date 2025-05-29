@@ -1,22 +1,30 @@
+
 import { Download, Book } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 const Research = () => {
-  const papers = [{
-    title: 'Comparative Analysis of Machine Learning Algorithms for Thyroid Disease Prediction',
-    description: 'Explores and compares various ML models for accuracy and reliability in medical diagnosis, focusing on early detection and prevention strategies.',
-    category: 'Machine Learning',
-    year: '2024',
-    status: 'Published',
-    gradient: 'from-indigo-500 to-purple-600'
-  }, {
-    title: 'Leveraging Deep Learning for Accurate Classification of Diabetic Retinopathy',
-    description: 'Utilizes deep learning models to achieve high-accuracy classifications for early-stage diabetic eye disease detection, improving patient outcomes.',
-    category: 'Deep Learning',
-    year: '2024',
-    status: 'Under Review',
-    gradient: 'from-orange-500 to-pink-500'
-  }];
-  return <section id="research" className="py-20 bg-white">
+  const papers = [
+    {
+      title: 'Comparative Analysis of Machine Learning Algorithms for Thyroid Disease Prediction',
+      description: 'Explores and compares various ML models for accuracy and reliability in medical diagnosis, focusing on early detection and prevention strategies.',
+      category: 'Machine Learning',
+      year: '2024',
+      status: 'Published',
+      gradient: 'from-indigo-500 to-purple-600',
+      pdfUrl: 'https://www.researchgate.net/publication/384265855_Comparative_Analysis_of_Machine_Learning_Algorithms_for_Thyroid_Disease_Prediction'
+    },
+    {
+      title: 'Leveraging Deep Learning for Accurate Classification of Diabetic Retinopathy',
+      description: 'Utilizes deep learning models to achieve high-accuracy classifications for early-stage diabetic eye disease detection, improving patient outcomes.',
+      category: 'Deep Learning',
+      year: '2024',
+      status: 'Under Review',
+      gradient: 'from-orange-500 to-pink-500'
+    }
+  ];
+
+  return (
+    <section id="research" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Research & Publications</h2>
@@ -26,7 +34,8 @@ const Research = () => {
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {papers.map((paper, index) => <div key={index} className="bg-gradient-to-r from-gray-50 to-indigo-50 rounded-2xl shadow-xl overflow-hidden">
+          {papers.map((paper, index) => (
+            <div key={index} className="bg-gradient-to-r from-gray-50 to-indigo-50 rounded-2xl shadow-xl overflow-hidden">
               <div className="md:flex">
                 <div className={`md:w-1/3 h-48 md:h-auto bg-gradient-to-br ${paper.gradient} flex items-center justify-center`}>
                   <Book className="text-white" size={64} />
@@ -59,14 +68,20 @@ const Research = () => {
                       <Book className="mr-2 h-4 w-4" />
                       Read More
                     </Button>
-                    {paper.status === 'Published' && <Button className="bg-indigo-600 hover:bg-indigo-700">
+                    {paper.status === 'Published' && paper.pdfUrl && (
+                      <Button 
+                        className="bg-indigo-600 hover:bg-indigo-700"
+                        onClick={() => window.open(paper.pdfUrl, '_blank')}
+                      >
                         <Download className="mr-2 h-4 w-4" />
                         Download PDF
-                      </Button>}
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
 
         <div className="mt-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-8 text-white text-center">
@@ -90,6 +105,8 @@ const Research = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Research;

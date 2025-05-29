@@ -9,6 +9,7 @@ const Skills = () => {
     'CSS',
     'JavaScript',
     'ReactJS',
+    'EmailJS',
     'OOPS',
   ];
 
@@ -17,6 +18,7 @@ const Skills = () => {
     { name: 'Team Work', icon: '🤝' },
     { name: 'Time Management', icon: '⏰' },
     { name: 'Leadership', icon: '👑' },
+    { name: 'Communication', icon: '💬' },
   ];
 
   return (
@@ -92,7 +94,7 @@ const Skills = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Soft Skills</h3>
             </div>
             
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               {softSkills.map((skill, index) => (
                 <div 
                   key={index} 
