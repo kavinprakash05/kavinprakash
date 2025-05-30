@@ -27,7 +27,7 @@ const Research = () => {
     <section id="research" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Research & Publications</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Research Paper</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Academic contributions focusing on machine learning and healthcare applications
           </p>
