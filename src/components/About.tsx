@@ -1,9 +1,6 @@
-
 import { User, GraduationCap } from 'lucide-react';
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 bg-white">
+  return <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
@@ -14,14 +11,16 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {/* Personal Bio Section - Card Style */}
-          <div className="animate-fade-in h-full" style={{animationDelay: '0.2s'}}>
+          <div className="animate-fade-in h-full" style={{
+          animationDelay: '0.2s'
+        }}>
             <div className="bg-gradient-to-r from-gray-50 to-indigo-50 p-8 rounded-2xl shadow-lg border border-gray-100 h-full flex flex-col">
               <div className="flex items-center mb-8">
                 <User className="text-indigo-600 mr-3" size={24} />
                 <h3 className="text-2xl font-bold text-gray-900">Personal Bio</h3>
               </div>
               <div className="space-y-6 flex-grow">
-                <p className="text-gray-600 leading-relaxed text-justify">
+                <p className="text-gray-600 leading-relaxed text-justify text-lg font-semibold">
                   I am a dedicated frontend developer who thrives on building interactive, responsive web solutions. 
                   My passion lies in creating user-centric applications that provide seamless experiences across all devices.
                 </p>
@@ -40,7 +39,9 @@ const About = () => {
           </div>
 
           {/* Education Section */}
-          <div className="animate-fade-in h-full" style={{animationDelay: '0.4s'}}>
+          <div className="animate-fade-in h-full" style={{
+          animationDelay: '0.4s'
+        }}>
             <div className="h-full flex flex-col">
               <div className="flex items-center mb-8">
                 <GraduationCap className="text-indigo-600 mr-3" size={24} />
@@ -74,8 +75,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
