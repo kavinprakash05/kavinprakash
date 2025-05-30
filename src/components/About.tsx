@@ -58,7 +58,7 @@ const About = () => {
                 </div>
                 
                 <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-8 rounded-2xl border border-orange-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <h4 className="font-bold text-gray-900 text-xl mb-3">Saratha Matric Higher Secondary School</h4>
+                  <h4 className="font-bold text-gray-900 text-xl mb-3">SARATHA MATRIC HIGHER SECONDARY SCHOOL</h4>
                   <div className="space-y-3">
                     <div className="bg-white/80 px-4 py-3 rounded-lg">
                       <p className="text-orange-600 font-semibold">HSC – 85.67%</p>
