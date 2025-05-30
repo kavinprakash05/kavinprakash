@@ -74,13 +74,17 @@ const Hero = () => {
               <div className="w-64 md:w-72 h-64 md:h-72 bg-gradient-to-br from-orange-400/40 to-pink-500/40 rounded-full opacity-70 absolute top-4 left-4 blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
               <div className="relative w-72 md:w-80 h-72 md:h-80 bg-gradient-to-br from-white to-gray-100 rounded-full overflow-hidden border-8 border-white shadow-2xl hover:shadow-3xl transition-shadow duration-500">
                 <img 
-                  src="https://drive.google.com/uc?export=view&id=12vHFtY-Aamb5F7Eqrc0mg9kYXaUbLzpM" 
+                  src="/lovable-uploads/ba3f1e80-f530-43ef-9b0c-3331e0111d98.png" 
                   alt="Kavin Prakash M"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
                     // Fallback to initials if image fails to load
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallbackDiv = target.nextElementSibling as HTMLElement;
+                    if (fallbackDiv) {
+                      fallbackDiv.style.display = 'flex';
+                    }
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent" style={{display: 'none'}}>

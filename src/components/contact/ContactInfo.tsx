@@ -32,9 +32,7 @@ const ContactInfo = () => {
       <div className="mb-8">
         <h4 className="font-bold text-gray-900 mb-4">Address</h4>
         <p className="text-gray-600 leading-relaxed">
-          291, Orambu Thottam,<br />
-          Palanigoundenpalayam, Kurumandur,<br />
-          Gobi - 638457
+          Kurumandur, Gobi – 638457
         </p>
       </div>
 

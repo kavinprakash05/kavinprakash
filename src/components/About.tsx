@@ -1,5 +1,5 @@
 
-import { User, GraduationCap, Award } from 'lucide-react';
+import { User, GraduationCap } from 'lucide-react';
 
 const About = () => {
   return (
@@ -14,47 +14,25 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-            <div className="mb-10">
-              <div className="flex items-center mb-6">
-                <User className="text-indigo-600 mr-3" size={24} />
-                <h3 className="text-2xl font-bold text-gray-900">Personal Bio</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed mb-6 text-justify">
+            <div className="flex items-center mb-8">
+              <User className="text-indigo-600 mr-3" size={24} />
+              <h3 className="text-2xl font-bold text-gray-900">Personal Bio</h3>
+            </div>
+            <div className="space-y-6">
+              <p className="text-gray-600 leading-relaxed text-justify">
                 I am a dedicated frontend developer who thrives on building interactive, responsive web solutions. 
                 My passion lies in creating user-centric applications that provide seamless experiences across all devices.
               </p>
               <p className="text-gray-600 leading-relaxed text-justify">
                 Beyond coding, I am actively involved in tech clubs and community initiatives, enjoying the opportunity 
-                to present innovative ideas at symposiums and collaborate with fellow tech enthusiasts.
+                to present innovative ideas at symposiums and collaborate with fellow tech enthusiasts. I have served 
+                as an IV Coordinator and Project Lead, along with holding leadership positions as an Office Bearer at 
+                ISTE – KEC and Executive Member at Rotaract Club – KEC.
               </p>
-            </div>
-
-            <div className="mb-10">
-              <div className="flex items-center mb-6">
-                <Award className="text-indigo-600 mr-3" size={24} />
-                <h3 className="text-2xl font-bold text-gray-900">Leadership Roles</h3>
-              </div>
-              
-              <div className="space-y-6">
-                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 rounded-xl text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <h4 className="font-bold text-lg mb-2">Office Bearer</h4>
-                  <p className="opacity-90">ISTE – KEC</p>
-                </div>
-                
-                <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-6 rounded-xl text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <h4 className="font-bold text-lg mb-2">Executive Member</h4>
-                  <p className="opacity-90">Rotaract Club – KEC</p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-gradient-to-r from-purple-500 to-indigo-500 p-4 rounded-xl text-white text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <h4 className="font-bold">IV Coordinator</h4>
-                  </div>
-                  <div className="bg-gradient-to-r from-pink-500 to-orange-500 p-4 rounded-xl text-white text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <h4 className="font-bold">Project Coordinator</h4>
-                  </div>
-                </div>
-              </div>
+              <p className="text-gray-600 leading-relaxed text-justify">
+                These leadership experiences have enhanced my collaborative skills and ability to drive innovative 
+                projects forward while maintaining a focus on technical excellence and user experience.
+              </p>
             </div>
           </div>
 
