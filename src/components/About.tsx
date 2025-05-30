@@ -49,7 +49,7 @@ const About = () => {
               </div>
               <div className="space-y-6 flex-grow flex flex-col">
                 <div className="bg-gradient-to-r from-indigo-50 to-blue-50 p-8 rounded-2xl border border-indigo-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex-grow">
-                  <h4 className="font-bold text-gray-900 text-xl mb-3">Kongu Engineering College</h4>
+                  <h4 className="font-bold text-gray-900 text-xl mb-3">KONGU ENGINEERING COLLEGE</h4>
                   <p className="text-indigo-600 font-semibold text-lg mb-2">B.Tech in Information Technology</p>
                   <p className="text-gray-600 mb-2">2021 – 2025</p>
                   <div className="bg-white/80 px-4 py-2 rounded-lg inline-block">
