@@ -20,7 +20,7 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-gray-900">Personal Bio</h3>
               </div>
               <div className="space-y-6 flex-grow">
-                <p className="text-gray-600 leading-relaxed text-justify font-semibold text-base">
+                <p className="text-gray-600 leading-relaxed text-justify font-semibold text-lg">
                   I am a dedicated frontend developer who thrives on building interactive, responsive web solutions. 
                   My passion lies in creating user-centric applications that provide seamless experiences across all devices.
                 </p>
