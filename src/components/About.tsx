@@ -24,13 +24,13 @@ const About = () => {
                   I am a dedicated frontend developer who thrives on building interactive, responsive web solutions. 
                   My passion lies in creating user-centric applications that provide seamless experiences across all devices.
                 </p>
-                <p className="text-gray-600 leading-relaxed text-justify font-semibold text-lg">
+                <p className="text-gray-600 leading-relaxed text-justify font-semibold text-base">
                   Beyond coding, I am actively involved in tech clubs and community initiatives, enjoying the opportunity 
                   to present innovative ideas at symposiums and collaborate with fellow tech enthusiasts. I have served 
                   as an IV Coordinator and Project Lead, along with holding leadership positions as an Office Bearer at 
                   ISTE – KEC and Executive Member at Rotaract Club – KEC.
                 </p>
-                <p className="text-gray-600 leading-relaxed text-justify font-semibold text-lg">These leadership experiences have enhanced my collaborative skills and ability to drive innovative projects forward while maintaining a focus on technical excellence and user experience. They’ve also strengthened my decision-making under pressure and adaptability in dynamic team environments.</p>
+                <p className="text-gray-600 leading-relaxed text-justify font-semibold text-base">These leadership experiences have enhanced my collaborative skills and ability to drive innovative projects forward while maintaining a focus on technical excellence and user experience. They’ve also strengthened my decision-making under pressure and adaptability in dynamic team environments.</p>
               </div>
             </div>
           </div>
