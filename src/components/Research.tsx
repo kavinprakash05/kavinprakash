@@ -1,3 +1,4 @@
+
 import { Download, Book, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -24,7 +25,7 @@ const Research = () => {
       year: '2024',
       status: 'Under Review',
       gradient: 'from-orange-500 to-pink-500',
-      pdfUrl: 'https://drive.google.com/file/d/1_PFkB-wDuTEPFf1bceGlmpxgotF_SvmO/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/1SjaFTMkof2XjsxXvcrZXDo7Mhl3FU-ll/view?usp=sharing'
     }
   ];
 
