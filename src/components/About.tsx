@@ -1,3 +1,4 @@
+
 import { User, GraduationCap } from 'lucide-react';
 const About = () => {
   return <section id="about" className="py-20 bg-white">
@@ -30,7 +31,7 @@ const About = () => {
                   as an IV Coordinator and Project Lead, along with holding leadership positions as an Office Bearer at 
                   ISTE – KEC and Executive Member at Rotaract Club – KEC.
                 </p>
-                <p className="text-gray-600 leading-relaxed text-justify font-semibold text-base">These leadership experiences have enhanced my collaborative skills and ability to drive innovative projects forward while maintaining a focus on technical excellence and user experience. They’ve also strengthened my decision-making under pressure and adaptability in dynamic team environments.</p>
+                <p className="text-gray-600 leading-relaxed text-justify font-semibold text-base">These leadership experiences have enhanced my collaborative skills and ability to drive innovative projects forward while maintaining a focus on technical excellence and user experience. They've also strengthened my decision-making under pressure and adaptability in dynamic team environments.</p>
               </div>
             </div>
           </div>
@@ -55,15 +56,15 @@ const About = () => {
                 </div>
                 
                 <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-8 rounded-2xl border border-orange-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <h4 className="font-bold text-gray-900 text-xl mb-3"> SARATHA MATRIC HIGHER SECONDARY SCHOOL</h4>
+                  <h4 className="font-bold text-gray-900 text-xl mb-3"> SARATHA MATRIC HIGHER SECONDARY SCHOOL</h4>
                   <div className="space-y-3">
                     <div className="bg-white/80 px-4 py-3 rounded-lg">
                       <p className="text-orange-600 font-semibold">HSC – 85.67%</p>
-                      <p className="text-gray-600 text-sm">2021</p>
+                      <p className="text-gray-600 text-sm">2020 - 2021</p>
                     </div>
                     <div className="bg-white/80 px-4 py-3 rounded-lg">
                       <p className="text-orange-600 font-semibold">SSLC – 76.2%</p>
-                      <p className="text-gray-600 text-sm">2019</p>
+                      <p className="text-gray-600 text-sm">2018 - 2019</p>
                     </div>
                   </div>
                 </div>

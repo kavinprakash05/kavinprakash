@@ -133,15 +133,7 @@ const Research = () => {
                 {/* Action Buttons */}
                 <div className="flex gap-3">
                   <Button 
-                    variant="outline" 
-                    className="flex-1 border-green-500 text-green-600 hover:bg-green-50 hover:border-green-600 transition-all duration-300 transform hover:scale-105"
-                    onClick={() => toggleReadMore(index)}
-                  >
-                    <Eye className="mr-2 h-4 w-4" />
-                    {expandedPaper === index ? 'Show Less' : 'Read More'}
-                  </Button>
-                  <Button 
-                    className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex-1"
                     onClick={() => handlePdfDownload(paper.pdfUrl)}
                   >
                     <Download className="mr-2 h-4 w-4" />
