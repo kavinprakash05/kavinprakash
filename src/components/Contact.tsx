@@ -1,22 +1,10 @@
 
 import ContactInfo from './contact/ContactInfo';
 import ContactForm from './contact/ContactForm';
-import { trackSectionView } from '@/lib/analytics';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const Contact = () => {
-  // Track when Contact section comes into view
-  const { elementRef } = useIntersectionObserver({
-    threshold: 0.3,
-    onIntersect: (entry) => {
-      if (entry.isIntersecting) {
-        trackSectionView('Contact');
-      }
-    }
-  });
-
   return (
-    <section ref={elementRef} id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>

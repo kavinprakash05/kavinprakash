@@ -1,19 +1,7 @@
 
 import { User, GraduationCap } from 'lucide-react';
-import { trackSectionView } from '@/lib/analytics';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const About = () => {
-  // Track when About section comes into view
-  const { elementRef } = useIntersectionObserver({
-    threshold: 0.3,
-    onIntersect: (entry) => {
-      if (entry.isIntersecting) {
-        trackSectionView('About');
-      }
-    }
-  });
-
-  return <section ref={elementRef} id="about" className="py-20 bg-white">
+  return <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>

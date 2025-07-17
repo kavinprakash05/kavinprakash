@@ -4,21 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useState } from 'react';
-import { trackResearchDownload, trackSectionView, trackPortfolioEngagement } from '@/lib/analytics';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const Research = () => {
   const [expandedPaper, setExpandedPaper] = useState<number | null>(null);
-
-  // Track when Research section comes into view
-  const { elementRef } = useIntersectionObserver({
-    threshold: 0.3,
-    onIntersect: (entry) => {
-      if (entry.isIntersecting) {
-        trackSectionView('Research');
-      }
-    }
-  });
 
   const papers = [
     {
@@ -43,10 +31,7 @@ const Research = () => {
     }
   ];
 
-  const handlePdfDownload = (url: string, paperTitle: string) => {
-    // Track the download before opening
-    trackResearchDownload(paperTitle, url);
-    
+  const handlePdfDownload = (url: string) => {
     const fileId = url.match(/\/d\/([a-zA-Z0-9-_]+)/)?.[1];
     if (fileId) {
       const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
@@ -57,19 +42,11 @@ const Research = () => {
   };
 
   const toggleReadMore = (index: number) => {
-    const isExpanding = expandedPaper !== index;
     setExpandedPaper(expandedPaper === index ? null : index);
-    
-    // Track engagement with research papers
-    trackPortfolioEngagement(
-      isExpanding ? 'expand_research_paper' : 'collapse_research_paper',
-      'Research',
-      { paper_index: index, paper_title: papers[index].title }
-    );
   };
 
   return (
-    <section ref={elementRef} id="research" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+    <section id="research" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
       {/* Background Animation Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -157,7 +134,7 @@ const Research = () => {
                 <div className="flex gap-3">
                   <Button 
                     className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex-1"
-                    onClick={() => handlePdfDownload(paper.pdfUrl, paper.title)}
+                    onClick={() => handlePdfDownload(paper.pdfUrl)}
                   >
                     <Download className="mr-2 h-4 w-4" />
                     View PDF
