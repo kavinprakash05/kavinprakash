@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { trackContactFormSubmission } from '@/lib/analytics';
 import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
@@ -34,6 +35,9 @@ const ContactForm = () => {
         },
         'iDqdHF6XvfXAByLyd' // Public Key
       );
+      
+      // Track successful form submission
+      trackContactFormSubmission('email_form');
       
       toast({
         title: "Message sent successfully!",

@@ -1,10 +1,28 @@
 
 import { Download, Github, Linkedin, ArrowRight, Phone, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { trackSectionView, trackPortfolioEngagement } from '@/lib/analytics';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import ResumeDownload from './ResumeDownload';
 
 const Hero = () => {
+  // Track when Hero section comes into view
+  const { elementRef } = useIntersectionObserver({
+    threshold: 0.3,
+    onIntersect: (entry) => {
+      if (entry.isIntersecting) {
+        trackSectionView('Hero');
+      }
+    }
+  });
+
+  const handleExternalLink = (url: string, linkType: string) => {
+    trackPortfolioEngagement('external_link_click', 'Hero', { link_type: linkType, url });
+    window.open(url, '_blank');
+  };
+
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-20 relative overflow-hidden">
+    <section ref={elementRef} id="home" className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-20 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl animate-pulse"></div>
@@ -35,17 +53,16 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button 
+              <ResumeDownload 
                 className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
-                onClick={() => window.open('https://drive.google.com/file/d/1FpaZRv-yxpqFB7OZl38IvgyKcEbXkO_5/view?usp=sharing', '_blank')}
               >
                 <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
                 Download CV
-              </Button>
+              </ResumeDownload>
               <Button 
                 variant="outline" 
                 className="border-2 border-indigo-300 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
-                onClick={() => window.open('https://github.com/kavinprakash05', '_blank')}
+                onClick={() => handleExternalLink('https://github.com/kavinprakash05', 'github_profile')}
               >
                 Visit GitHub Profile
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -53,16 +70,38 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a href="tel:9655998612" className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-green-600 hover:scale-110 group">
+              <a 
+                href="tel:9655998612" 
+                className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-green-600 hover:scale-110 group"
+                onClick={() => trackPortfolioEngagement('phone_click', 'Hero', { contact_method: 'phone' })}
+              >
                 <Phone size={22} className="group-hover:rotate-12 transition-transform duration-300" />
               </a>
-              <a href="https://leetcode.com/kavinprakash/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-orange-600 hover:scale-110 group">
+              <a 
+                href="https://leetcode.com/kavinprakash/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-orange-600 hover:scale-110 group"
+                onClick={() => trackPortfolioEngagement('external_link_click', 'Hero', { link_type: 'leetcode' })}
+              >
                 <Code size={22} className="group-hover:rotate-12 transition-transform duration-300" />
               </a>
-              <a href="https://www.linkedin.com/in/kavinprakash/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-blue-600 hover:scale-110 group">
+              <a 
+                href="https://www.linkedin.com/in/kavinprakash/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-blue-600 hover:scale-110 group"
+                onClick={() => trackPortfolioEngagement('external_link_click', 'Hero', { link_type: 'linkedin' })}
+              >
                 <Linkedin size={22} className="group-hover:rotate-12 transition-transform duration-300" />
               </a>
-              <a href="https://github.com/kavinprakash05" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-indigo-600 hover:scale-110 group">
+              <a 
+                href="https://github.com/kavinprakash05" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-indigo-600 hover:scale-110 group"
+                onClick={() => trackPortfolioEngagement('external_link_click', 'Hero', { link_type: 'github' })}
+              >
                 <Github size={22} className="group-hover:rotate-12 transition-transform duration-300" />
               </a>
             </div>
