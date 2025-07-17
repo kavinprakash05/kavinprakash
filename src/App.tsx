@@ -12,7 +12,7 @@ import { initializeConsentMode, initializeGA } from "./lib/analytics";
 const queryClient = new QueryClient();
 
 // Replace this with your actual GA4 Measurement ID
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // You'll need to replace this with your real GA4 ID
+const GA_MEASUREMENT_ID = 'G-3X84RBRMCW'; // You'll need to replace this with your real GA4 ID
 
 const App = () => {
   useEffect(() => {
