@@ -37,7 +37,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
-                onClick={() => window.open('https://drive.google.com/file/d/1FpaZRv-yxpqFB7OZl38IvgyKcEbXkO_5/view?usp=sharing', '_blank')}
+                onClick={() => window.open('/KAVIN_PRAKASH_M_RESUME.pdf', '_blank')}
               >
                 <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
                 Download CV
